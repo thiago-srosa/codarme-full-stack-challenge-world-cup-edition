@@ -6,13 +6,13 @@ module.exports = {
     jest: true,
     node: true,
   },
-
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:@typescript-eslint/strict',
+    'plugin:tailwindcss/recommended',
     'next',
     'prettier',
   ],
@@ -21,16 +21,9 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['tailwindcss', '@typescript-eslint'],
   root: true,
   rules: {
-    'max-len': [
-      'error',
-      {
-        code: 90,
-        tabWidth: 4,
-        ignoreUrls: true,
-      },
-    ],
+    'max-len': 0,
   },
 };
